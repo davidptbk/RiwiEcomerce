@@ -1,4 +1,4 @@
-package com.riwiEcomerce.riwiEcomerce.domain.repositories;
+package com.riwiEcomerce.riwiEcomerce.domain.entities;
 
 import java.math.BigDecimal;
 
