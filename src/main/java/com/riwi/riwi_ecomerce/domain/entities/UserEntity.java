@@ -1,7 +1,7 @@
-package com.riwi_ecomerce.riwi_ecomerce.domain.entities;
+package com.riwi.riwi_ecomerce.domain.entities;
 
-import com.riwi_ecomerce.riwi_ecomerce.util.enums.RoleUser;
-import com.riwi_ecomerce.riwi_ecomerce.util.enums.StatusUser;
+import com.riwi.riwi_ecomerce.util.enums.RoleUser;
+import com.riwi.riwi_ecomerce.util.enums.StatusUser;
 
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
@@ -15,7 +15,7 @@ import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
-@Entity
+@Entity(name = "user")
 @Data
 @Builder
 @AllArgsConstructor

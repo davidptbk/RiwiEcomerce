@@ -1,6 +1,6 @@
-package com.riwi_ecomerce.riwi_ecomerce.domain.entities;
+package com.riwi.riwi_ecomerce.domain.entities;
 
-import java.util.List;
+import java.math.BigDecimal;
 
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
@@ -10,24 +10,26 @@ import jakarta.persistence.Id;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
-import lombok.EqualsAndHashCode;
 import lombok.NoArgsConstructor;
-import lombok.ToString;
 
-@Entity(name = "shopping_cart")
+@Entity(name = "product")
 @Data
 @Builder
-@NoArgsConstructor
 @AllArgsConstructor
-public class ShoppingCart {
+@NoArgsConstructor
+public class ProductEntity {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
-
     @Column(nullable = false)
-    private UserEntity user;
-
-    @ToString.Exclude
-    @EqualsAndHashCode.Exclude
-    private List<ProductEntity> products;
+    private String name;
+    private String description;
+    @Column(nullable = false)
+    private BigDecimal price;
+    @Column(nullable = false)
+    private String imageUrl;
+    @Column(nullable = false)
+    private Integer stock;
+    @Column(nullable = false)
+    private String category;
 }
