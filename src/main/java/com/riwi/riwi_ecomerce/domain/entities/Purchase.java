@@ -18,16 +18,16 @@ import lombok.EqualsAndHashCode;
 import lombok.NoArgsConstructor;
 import lombok.ToString;
 
-@Entity(name = "shopping_cart")
+@Entity(name = "purchase")
 @Data
 @Builder
-@NoArgsConstructor
 @AllArgsConstructor
-public class ShoppingCart {
+@NoArgsConstructor
+public class Purchase {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
-
+    
     @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "user_id", referencedColumnName = "id")
     private UserEntity user;
@@ -35,10 +35,9 @@ public class ShoppingCart {
     @ToString.Exclude
     @EqualsAndHashCode.Exclude
     @OneToMany(
-        fetch = FetchType.EAGER,
-        mappedBy = "product",
-        cascade = CascadeType.ALL,
-        orphanRemoval = false
-    )
-    private List<ProductEntity> products;
+        fetch = FetchType.EAGER, 
+        mappedBy = "shopping_cart", 
+        cascade = CascadeType.ALL, 
+        orphanRemoval = false)
+    private List<ShoppingCart> products;
 }
