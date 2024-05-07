@@ -1,9 +1,12 @@
 package com.riwi_ecomerce.riwi_ecomerce.domain.entities;
 
-import java.util.UUID;
+import com.riwi_ecomerce.riwi_ecomerce.util.enums.RoleUser;
+import com.riwi_ecomerce.riwi_ecomerce.util.enums.StatusUser;
 
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
+import jakarta.persistence.EnumType;
+import jakarta.persistence.Enumerated;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
@@ -20,7 +23,7 @@ import lombok.NoArgsConstructor;
 public class UserEntity {
     @Id
     @GeneratedValue(strategy = GenerationType.UUID)
-    private UUID id;
+    private String id;
     @Column(nullable = false)
     private String name;
     private String lastName;
@@ -28,4 +31,8 @@ public class UserEntity {
     private String email;
     private String phone;
     private String riwiPoints;
+    @Enumerated(EnumType.STRING)
+    private RoleUser role;
+    @Enumerated(EnumType.STRING)
+    private StatusUser status;
 }
