@@ -1,4 +1,4 @@
-package com.riwi_ecomerce.riwi_ecomerce;
+package com.riwi.riwi_ecomerce;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
