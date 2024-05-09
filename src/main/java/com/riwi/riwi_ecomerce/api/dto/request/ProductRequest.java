@@ -27,5 +27,8 @@ public class ProductRequest {
     @Min(value = 0, message= "El sotck no puede ser menor a 0")
     @NotNull(message = "El stock del producto es requerido")
     private Integer stock;
+    @NotNull(message = "EL id de la categoria es requqerido")
+    @Min(value = 1, message = "El id de categoria debe ser mayor a cero")
+    private Long categoryId;
 
 }
