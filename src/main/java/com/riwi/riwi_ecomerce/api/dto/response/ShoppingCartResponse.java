@@ -14,5 +14,5 @@ import lombok.NoArgsConstructor;
 public class ShoppingCartResponse {
     private String id;
     private String userId;
-    private List<ProductToShoppingResponse> products;
+    private List<ProductResponse> products;
 }

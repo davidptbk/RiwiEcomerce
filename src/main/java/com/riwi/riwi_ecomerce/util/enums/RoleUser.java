@@ -4,5 +4,6 @@ public enum RoleUser {
     CODER,
     COOWORKING,
     CUSTOMER,
-    EMPLOYEE
+    EMPLOYEE,
+    ADMIN
 }
