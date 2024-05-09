@@ -13,6 +13,7 @@ import org.springframework.web.bind.annotation.RestControllerAdvice;
 
 import com.riwi.riwi_ecomerce.api.dto.errors.BaseErrorResponse;
 import com.riwi.riwi_ecomerce.api.dto.errors.ErrorsResponse;
+import com.riwi.riwi_ecomerce.util.exceptions.BadRequestException;
 
 
 @RestControllerAdvice
@@ -34,6 +35,21 @@ public class BadRequestController {
 
         return ErrorsResponse.builder()
             .code(HttpStatus.BAD_REQUEST.value()) 
+            .status(HttpStatus.BAD_REQUEST.name())
+            .errors(errors)
+            .build();
+    }
+
+    @ExceptionHandler(BadRequestException.class)
+    public BaseErrorResponse handleError(BadRequestException exception){
+        List<Map<String, String>> errors = new ArrayList<>();
+
+        Map<String, String> error = new HashMap<>();
+
+        error.put("id", exception.getMessage());
+        errors.add(error);
+        return ErrorsResponse.builder()
+            .code(HttpStatus.BAD_REQUEST.value())
             .status(HttpStatus.BAD_REQUEST.name())
             .errors(errors)
             .build();
