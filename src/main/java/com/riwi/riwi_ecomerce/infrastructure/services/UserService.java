@@ -1,20 +1,13 @@
 package com.riwi.riwi_ecomerce.infrastructure.services;
 
-import java.util.ArrayList;
-import java.util.stream.Collectors;
-
-import org.springframework.beans.BeanUtils;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.boot.autoconfigure.security.SecurityProperties.User;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.PageRequest;
 import org.springframework.data.domain.Sort;
 import org.springframework.stereotype.Service;
 
 import com.riwi.riwi_ecomerce.api.dto.request.UserRequest;
-import com.riwi.riwi_ecomerce.api.dto.response.PurchaseToUserResponse;
 import com.riwi.riwi_ecomerce.api.dto.response.UserResponse;
-import com.riwi.riwi_ecomerce.domain.entities.Purchase;
 import com.riwi.riwi_ecomerce.domain.entities.UserEntity;
 import com.riwi.riwi_ecomerce.domain.repositories.UserRepository;
 import com.riwi.riwi_ecomerce.infrastructure.abstract_services.IUserService;
