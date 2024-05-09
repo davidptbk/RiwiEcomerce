@@ -4,7 +4,6 @@ import java.time.LocalDateTime;
 import java.util.List;
 
 import com.riwi.riwi_ecomerce.domain.entities.ShoppingCart;
-import com.riwi.riwi_ecomerce.domain.entities.UserEntity;
 
 import lombok.AllArgsConstructor;
 import lombok.Builder;
@@ -18,6 +17,6 @@ import lombok.NoArgsConstructor;
 public class PurchaseBasicResponse {
     private Long id;
     private LocalDateTime dateTime;
-    private UserEntity user;
+    private UserResponse user;
     private List<ShoppingCart> products;
 }
