@@ -29,4 +29,7 @@ public class UserRequest {
     @Pattern(regexp = "^[+]?[0-9]{10,15}$", message = "El formato del número de teléfono no es válido. Debe comenzar opcionalmente con un '+', seguido de 10 a 15 dígitos.")
     private String phone;
 
+    @NotBlank(message = "la direccion de entrega es requerido")
+    private String address;
+
 }

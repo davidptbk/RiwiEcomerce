@@ -24,6 +24,7 @@ public class UserResponse {
     private String riwiPoints;
     private RoleUser role;
     private StatusUser status;
+    private String address;
     private List<PurchaseToUserResponse> purchases;
 
 }

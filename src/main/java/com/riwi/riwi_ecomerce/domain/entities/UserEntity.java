@@ -41,6 +41,9 @@ public class UserEntity {
     private String phone;
 
     private String riwiPoints;
+    
+    @Column(nullable = false)
+    private String address;
 
     @Enumerated(EnumType.STRING)
     private RoleUser role;
