@@ -35,8 +35,18 @@ public class Purchase {
     @ToString.Exclude
     @EqualsAndHashCode.Exclude
     @OneToMany(
+        fetch = FetchType.EAGER,
+        mappedBy = "purchase",
+        cascade = CascadeType.ALL,
+        orphanRemoval = false
+    )
+    private List<ProductToPurchase> purchases;
+
+    @ToString.Exclude
+    @EqualsAndHashCode.Exclude
+    @OneToMany(
         fetch = FetchType.EAGER, 
-        mappedBy = "shopping_cart", 
+        mappedBy = "purchase", 
         cascade = CascadeType.ALL, 
         orphanRemoval = false)
     private List<ShoppingCart> products;
