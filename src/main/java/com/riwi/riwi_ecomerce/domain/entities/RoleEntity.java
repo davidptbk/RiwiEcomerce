@@ -22,4 +22,6 @@ public class RoleEntity {
     private Long Id;
     @Column(nullable = false)
     private String name;
+
+    
 }

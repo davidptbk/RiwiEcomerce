@@ -44,8 +44,6 @@ public class UserEntity {
     @Column(nullable = false)
     private String password;
 
-    @ToString.Exclude
-    @EqualsAndHashCode.Exclude
     @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "role_id", nullable = false)
     private int roleId; // Conexion
@@ -53,8 +51,9 @@ public class UserEntity {
     @Column(nullable = false)
     private int riwiCoins;
 
+
+    @OneToMany(mappedBy = "user", fetch = FetchType.LAZY)
     @ToString.Exclude
     @EqualsAndHashCode.Exclude
-    @OneToMany(mappedBy = "user", fetch = FetchType.LAZY)
     private List<PurchaseEntity> purchases;
 }
