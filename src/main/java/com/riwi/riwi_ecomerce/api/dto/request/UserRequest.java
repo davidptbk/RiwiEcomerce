@@ -20,6 +20,7 @@ public class UserRequest {
     private String name;
 
     @Size(min = 2, max = 100, message = "El/los apellido/s deben de estar entre la cantidad de caracteres permitidos(2 - 100)")
+    @NotBlank(message = "El apellido de el usuario es requerido")
     private String lastName;
 
     @Size(min = 9, max = 100, message = "El email debe de estar entre la cantidad de caracteres permitidos(9 - 100)")
@@ -27,9 +28,16 @@ public class UserRequest {
     private String email;
 
     @Pattern(regexp = "^[+]?[0-9]{10,15}$", message = "El formato del número de teléfono no es válido. Debe comenzar opcionalmente con un '+', seguido de 10 a 15 dígitos.")
-    private String phone;
+    @NotBlank(message = "El telefono del usuario es requerido")
+    private String phoneNumber;
 
     @NotBlank(message = "la direccion de entrega es requerido")
     private String address;
+
+    @NotBlank(message = "la contraseña del usuario son requeridos")
+    private String password;
+
+    @NotBlank(message = "los riwiCoins del usuario son requeridos")
+    private Integer riwiCoins;
 
 }
