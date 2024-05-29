@@ -1,5 +1,6 @@
 package com.riwi.riwi_ecomerce.domain.entities;
 
+import java.time.LocalDateTime;
 import java.util.List;
 
 import jakarta.persistence.CascadeType;
@@ -29,18 +30,59 @@ public class PurchaseEntity {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
-
+    
+    @Column(nullable = false)
+    private Integer quantityItems;
+    
+    @Column(nullable = false)
+    private Float individualTotalValue;
+    
     @Column(nullable = false)
     private Float totalValue;
     
     @Column(nullable = false)
     private Boolean status;
 
-    @ToString.Exclude
-    @EqualsAndHashCode.Exclude
+    @Column(nullable = false)
+    private LocalDateTime date;
+
+    @Column(nullable = false)
+    private Long ref;
+
+    // @ToString.Exclude
+    // @EqualsAndHashCode.Exclude
     @ManyToOne(fetch = FetchType.LAZY)
-    @JoinColumn(name = "user_id", nullable = false)
+    @JoinColumn(name = "product_id", referencedColumnName = "id")
+    private ProductEntity product;
+
+    // @ToString.Exclude
+    // @EqualsAndHashCode.Exclude
+    @ManyToOne(fetch = FetchType.LAZY)
+    @JoinColumn(name = "user_id", referencedColumnName = "id")
+    private UserEntity user;
+}
+
+
+/*
+ *     @ToString.Exclude
+    @EqualsAndHashCode.Exclude
+    @OneToMany(
+        cascade = CascadeType.ALL,
+        fetch = FetchType.EAGER,
+        mappedBy = "",
+        orphanRemoval = ?
+    )
     private UserEntity user;
 
 
-}
+
+        @ToString.Exclude
+    @EqualsAndHashCode.Exclude
+    @OneToMany(
+        cascade = CascadeType.ALL,
+        fetch = FetchType.EAGER,
+        mappedBy = "",
+        orphanRemoval = ?
+    )
+    private ProductEntity product;
+ */

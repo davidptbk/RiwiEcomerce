@@ -47,7 +47,7 @@ public class ProductEntity {
         fetch = FetchType.EAGER,
         mappedBy = "product", 
         cascade = CascadeType.ALL, 
-        orphanRemoval = true
+        orphanRemoval = false
     )
     private List<ImageEntity> images;
 
