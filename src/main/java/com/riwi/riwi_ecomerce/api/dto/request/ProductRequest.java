@@ -1,4 +1,4 @@
-package com.riwi.riwi_ecomerce.api.dto.response;
+package com.riwi.riwi_ecomerce.api.dto.request;
 
 import java.util.List;
 
@@ -10,16 +10,15 @@ import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
+// Mirar bien 
 @Data
 @Builder
 @AllArgsConstructor
 @NoArgsConstructor
-public class ProductResponse {
-    private Long id;
+public class ProductRequest {
     private String name;
     private Float price;
     private String features;
     private Integer stock;
-    private List<PurchaseResponse> purchase;
-    private List<ImageEntity> images;
+    private Long idPurchases;
 }
