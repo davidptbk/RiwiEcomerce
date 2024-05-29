@@ -2,6 +2,7 @@ package com.riwi.riwi_ecomerce.domain.entities;
 
 import java.util.List;
 
+import jakarta.persistence.CascadeType;
 import jakarta.persistence.Column;
 import jakarta.persistence.FetchType;
 import jakarta.persistence.GeneratedValue;
@@ -52,8 +53,13 @@ public class UserEntity {
     private int riwiCoins;
 
 
-    @OneToMany(mappedBy = "user", fetch = FetchType.LAZY)
     @ToString.Exclude
     @EqualsAndHashCode.Exclude
+    @OneToMany(
+        fetch = FetchType.EAGER,
+        mappedBy = "user", 
+        cascade = CascadeType.ALL, 
+        orphanRemoval = false
+    )
     private List<PurchaseEntity> purchases;
 }

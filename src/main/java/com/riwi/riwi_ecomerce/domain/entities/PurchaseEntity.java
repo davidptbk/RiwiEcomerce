@@ -61,28 +61,3 @@ public class PurchaseEntity {
     @JoinColumn(name = "user_id", referencedColumnName = "id")
     private UserEntity user;
 }
-
-
-/*
- *     @ToString.Exclude
-    @EqualsAndHashCode.Exclude
-    @OneToMany(
-        cascade = CascadeType.ALL,
-        fetch = FetchType.EAGER,
-        mappedBy = "",
-        orphanRemoval = ?
-    )
-    private UserEntity user;
-
-
-
-        @ToString.Exclude
-    @EqualsAndHashCode.Exclude
-    @OneToMany(
-        cascade = CascadeType.ALL,
-        fetch = FetchType.EAGER,
-        mappedBy = "",
-        orphanRemoval = ?
-    )
-    private ProductEntity product;
- */

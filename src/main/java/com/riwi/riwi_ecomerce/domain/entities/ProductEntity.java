@@ -51,5 +51,14 @@ public class ProductEntity {
     )
     private List<ImageEntity> images;
 
-
+    
+    @ToString.Exclude
+    @EqualsAndHashCode.Exclude
+    @OneToMany(
+        fetch = FetchType.EAGER,
+        mappedBy = "product", 
+        cascade = CascadeType.ALL, 
+        orphanRemoval = false
+    )
+    private List<PurchaseEntity> purchases;
 }
