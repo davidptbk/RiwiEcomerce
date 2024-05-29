@@ -4,6 +4,7 @@ import java.util.List;
 
 import jakarta.persistence.CascadeType;
 import jakarta.persistence.Column;
+import jakarta.persistence.Entity;
 import jakarta.persistence.FetchType;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
@@ -19,7 +20,7 @@ import lombok.EqualsAndHashCode;
 import lombok.NoArgsConstructor;
 import lombok.ToString;
 
-@Table(name = "user")
+@Entity(name = "user")
 @Data
 @Builder
 @AllArgsConstructor
@@ -46,11 +47,11 @@ public class UserEntity {
     private String password;
 
     @ManyToOne(fetch = FetchType.LAZY)
-    @JoinColumn(name = "role_id", nullable = false)
-    private int roleId; // Conexion
+    @JoinColumn(name = "role_id", referencedColumnName = "id")
+    private RoleEntity roleId; // Conexion
 
     @Column(nullable = false)
-    private int riwiCoins;
+    private Integer riwiCoins;
 
 
     @ToString.Exclude
@@ -62,4 +63,9 @@ public class UserEntity {
         orphanRemoval = false
     )
     private List<PurchaseEntity> purchases;
+
+    @OneToMany(mappedBy = "user", fetch = FetchType.EAGER, cascade = CascadeType.ALL, orphanRemoval = false)
+    @ToString.Exclude
+    @EqualsAndHashCode.Exclude
+    private List<AddressEntity> adress;
 }
