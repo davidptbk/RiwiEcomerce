@@ -11,6 +11,7 @@ import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 import jakarta.persistence.Lob;
 import jakarta.persistence.OneToMany;
+
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
@@ -51,7 +52,6 @@ public class ProductEntity {
     )
     private List<ImageEntity> images;
 
-    
     @ToString.Exclude
     @EqualsAndHashCode.Exclude
     @OneToMany(
