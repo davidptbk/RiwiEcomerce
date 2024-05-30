@@ -20,5 +20,5 @@ public class ProductRequest {
     private Float price;
     private String features;
     private Integer stock;
-    private Long idPurchases;
+    private Long idImages;
 }

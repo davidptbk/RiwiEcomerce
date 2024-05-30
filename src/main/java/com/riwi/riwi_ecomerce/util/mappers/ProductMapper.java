@@ -13,16 +13,9 @@ import lombok.AllArgsConstructor;
 @AllArgsConstructor
 public class ProductMapper {
 
-    private final PurshaseMapper purshaseMapper;
-
+    private final PurchaseMapper purchaseMapper;
 
     public ProductResponse entityToResponse(ProductEntity entity) {
-
-        var pr = entity.getPurchases()
-        .stream()
-        .map(temp -> this.purshaseMapper.entityToResponse(temp))
-        .collect(Collectors.toList());
-
 
         return ProductResponse.builder()
                 .id(entity.getId())
@@ -30,8 +23,7 @@ public class ProductMapper {
                 .price(entity.getPrice())
                 .features(entity.getFeatures())
                 .stock(entity.getStock())
-                .purchase(pr) // La lista no es un tipo de dato que se pueda adjuntar aqui
+                .images(entity.getImages()) // La lista no es un tipo de dato que se pueda adjuntar aqui
                 .build();
-
     }
 }

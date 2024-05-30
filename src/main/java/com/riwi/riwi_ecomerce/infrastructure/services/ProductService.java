@@ -66,9 +66,6 @@ public class ProductService implements IProductService {
         .stock(entity.getStock())
         .purchase(entity.getPurchases()) // La lista no es un tipo de dato que se pueda adjuntar aqui 
         .build();
-        
-
-
     }
 
 }

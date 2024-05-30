@@ -1,6 +1,7 @@
 package com.riwi.riwi_ecomerce.api.dto.response;
 
 import java.time.LocalDateTime;
+import java.util.List;
 
 import com.riwi.riwi_ecomerce.domain.entities.ProductEntity;
 import com.riwi.riwi_ecomerce.domain.entities.UserEntity;
@@ -21,8 +22,8 @@ public class PurchaseResponse {
     private Float individualTotalValue;
     private Float totalValue;
     private Boolean status;
-     private LocalDateTime date;
-     private Long ref;
-     private ProductResponse product;
-     private UserEntity user; //TODO Cambiar a Response control-shift para buscar todos los todos
+    private LocalDateTime date;
+    private Long ref;
+    private ProductResponse product;
+    private UserResponse user; //TODO Cambiar a Response control-shift para buscar todos los todos
 }

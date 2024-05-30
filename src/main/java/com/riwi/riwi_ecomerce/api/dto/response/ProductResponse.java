@@ -20,6 +20,6 @@ public class ProductResponse {
     private Float price;
     private String features;
     private Integer stock;
-    private List<PurchaseResponse> purchase;
-    private List<ImageEntity> images;
+    //private List<ImageResponse> images;
+    private List<PurchaseResponse> purchases;
 }

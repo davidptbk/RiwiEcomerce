@@ -49,14 +49,10 @@ public class PurchaseEntity {
     @Column(nullable = false)
     private Long ref;
 
-    // @ToString.Exclude
-    // @EqualsAndHashCode.Exclude
     @ManyToOne(fetch = FetchType.LAZY)
-    @JoinColumn(name = "product_id", referencedColumnName = "id")
+    @JoinColumn(name = "purchase_id", referencedColumnName = "id")
     private ProductEntity product;
 
-    // @ToString.Exclude
-    // @EqualsAndHashCode.Exclude
     @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "user_id", referencedColumnName = "id")
     private UserEntity user;
