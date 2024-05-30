@@ -10,7 +10,7 @@ import lombok.NoArgsConstructor;
 @Builder
 @AllArgsConstructor
 @NoArgsConstructor
-public class AddressReq {
+public class AddressRequest {
     @NotBlank(message = "La calle de la direccion es requerida")
     private String street;
     @NotBlank(message = "El numero de la direccion es requerido")

@@ -2,7 +2,7 @@ package com.riwi.riwi_ecomerce.api.dto.request;
 
 import java.time.LocalDateTime;
 
-import jakarta.validation.constraints.FutureOrPresent;
+import jakarta.validation.constraints.NotBlank;
 import jakarta.validation.constraints.NotNull;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
@@ -14,10 +14,20 @@ import lombok.NoArgsConstructor;
 @AllArgsConstructor
 @NoArgsConstructor
 public class PurchaseRequest {
-    @FutureOrPresent(message = "La fecha y hora debe ser futura")
-    @NotNull(message = "La fecha y hora de la compra es requerida")
-    private LocalDateTime dateTime;
-    @NotNull(message = "El id del usuario es obligatorio")
-    private String user_id;
-    
+    @NotNull(message = "La cantidad de productos es requerida")
+    private Integer quantityItems;
+    @NotNull(message = "El valor individual es requerido")
+    private Float individualTotalValue;
+    @NotNull(message = "El valor total es requerido")
+    private Float totalValue;
+    @NotNull(message = "El estado de la compra es requerido")
+    private Boolean status;
+    //no se que va
+    private LocalDateTime date;
+    @NotNull(message = "La referencia es requerida")
+    private Long ref;
+    @NotNull(message = "El id del producto es requerido")
+    private Long productId;
+    @NotBlank(message = "El id del usuario es requerido")
+    private String userId;
 }
