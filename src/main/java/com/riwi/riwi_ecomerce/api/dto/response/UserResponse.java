@@ -21,9 +21,9 @@ public class UserResponse {
     private String lastName;
     private String phoneNumber;
     private String email;
-    private RolRequest role;
+    private RoleResponse role;
     private String riwiCoins;
     private StatusUser status;
-    private List<AdressToUserResponse> address; //TODO: Crear esto ya que la entidad de adress tiene el user por dentro, evitar blucle
-
+    //private List<AdressToUserResponse> address; //TODO: Crear esto ya que la entidad de adress tiene el user por dentro, evitar blucle
+    //private List<PurchaseToUserResponse> purchases; //TODO: Crear purchase to user response para que no se cree bucle
 }

@@ -1,6 +1,8 @@
 package com.riwi.riwi_ecomerce.api.dto.response;
 
-import java.math.BigDecimal;
+import java.util.List;
+
+import com.riwi.riwi_ecomerce.domain.entities.UserEntity;
 
 import lombok.AllArgsConstructor;
 import lombok.Builder;
@@ -11,12 +13,10 @@ import lombok.NoArgsConstructor;
 @Builder
 @AllArgsConstructor
 @NoArgsConstructor
-public class ProductResponse {
+public class RoleResponse {
+    
     private Long id;
     private String name;
-    private String description;
-    private BigDecimal price;
-    private String imageUrl;
-    private Integer stock;
-    private String category;
+    //private List<UserToRoleResponse> users; //TODO crear esta entidad o/y un BasicResponse para cada uno
+
 }
