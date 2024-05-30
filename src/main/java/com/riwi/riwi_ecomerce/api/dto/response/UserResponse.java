@@ -19,12 +19,11 @@ public class UserResponse {
     private String id;
     private String name;
     private String lastName;
+    private String phoneNumber;
     private String email;
-    private String phone;
-    private String riwiPoints;
-    private RoleUser role;
+    private RolRequest role;
+    private String riwiCoins;
     private StatusUser status;
-    private String address;
-    private List<PurchaseToUserResponse> purchases;
+    private List<AdressToUserResponse> address; //TODO: Crear esto ya que la entidad de adress tiene el user por dentro, evitar blucle
 
 }
